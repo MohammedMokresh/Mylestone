@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <data>
+        <variable
+                name="viewModel"
+                type="com.bernovia.mylestone.ui.signUp.SignUpViewModel"/>
+    </data>
+
+
+    <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        <RelativeLayout
+                android:layout_width="match_parent"
+                android:gravity="center"
+                android:layout_gravity="center"
+                android:layout_height="match_parent">
+            <ProgressBar
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    android:layout_centerInParent="true"
+                    app:mutableVisibility="@{viewModel.getLoadingVisibility()}"
+            />
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                <LinearLayout
+                        android:id="@+id/header_LinearLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="16dp"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="16dp"
+                        android:orientation="horizontal">
+
+                    <ImageView
+                            android:id="@+id/zoologo"
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            app:srcCompat="@drawable/ic_launcher_background"
+                            tools:ignore="ContentDescription"/>
+
+                    <LinearLayout
+                            android:id="@+id/sign_in_LinearLayout"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:orientation="vertical"
+
+                    >
+
+                        <TextView
+                                android:id="@+id/signin1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="end"
+                                app:fontFamily="@font/proxima_nova_regular"
+                                android:gravity="end"
+                                android:text="@string/sign_in"
+                                android:textColor="@color/colorPrimary"
+                                android:textSize="16sp"/>
+
+                        <LinearLayout
+                                android:layout_width="39dp"
+                                android:layout_height="1.5dp"
+                                android:layout_gravity="end"
+                                android:layout_marginTop="2dp"
+                                android:background="@color/colorPrimary"
+
+                        />
+
+                    </LinearLayout>
+                </LinearLayout>
+
+
+                <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/first_name_TextInputLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="5dp"
+                        android:layout_weight="1">
+
+                    <EditText
+                            android:id="@+id/first_name_EditText"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            app:fontFamily="@font/proxima_nova_regular"
+                            android:hint="Username"
+                            android:inputType="text"
+                            android:textColor="@color/colorPrimary"
+                            android:textSize="14sp"/>
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+                <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/email_TextInputLayout"
+                        android:layout_width="match_parent"
+                        android:layout_marginBottom="5dp"
+
+                        android:layout_height="wrap_content">
+
+                    <EditText
+                            android:id="@+id/email_EditText"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            app:fontFamily="@font/proxima_nova_regular"
+                            android:hint="@string/email"
+                            android:inputType="textEmailAddress"
+                            android:textColor="@color/colorPrimary"
+                            android:textSize="14sp"
+
+                    />
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+                <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/password_TextInputLayout"
+                        android:layout_width="match_parent"
+                        android:layout_marginBottom="5dp"
+
+                        android:layout_height="wrap_content">
+
+                    <EditText
+                            android:id="@+id/password_EditText"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            app:fontFamily="@font/proxima_nova_regular"
+                            android:hint="password"
+                            android:inputType="textPassword"
+                            android:textColor="@color/colorPrimary"
+                            android:textSize="14sp"/>
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/confirm_password_TextInputLayout"
+                        android:layout_width="match_parent"
+                        android:layout_marginBottom="5dp"
+
+                        android:layout_height="wrap_content"
+
+                >
+
+                    <EditText
+                            android:id="@+id/confirm_password_EditText"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            app:fontFamily="@font/proxima_nova_regular"
+                            android:hint="Confirm password"
+                            android:inputType="textPassword"
+                            android:textColor="@color/colorPrimary"
+                            android:textSize="14sp"/>
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+                <Button
+                        android:id="@+id/signup_Button"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="15dp"
+                        android:background="@drawable/bg_rounded_accent"
+                        app:fontFamily="@font/proxima_nova_semi_bold"
+                        android:text="@string/sign_up"
+                        android:textAllCaps="false"
+                        android:textColor="#cbd1dc"
+                        android:textSize="16sp"
+                        android:stateListAnimator="@null"
+                />
+
+
+                <TextView
+                        android:id="@+id/terms_TextView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:gravity="center"
+                        android:text="by_signing_up_you_agree_with_our_terms_and_conditions"
+                        android:textColor="#a9b0c3"
+                        android:textSize="12sp"/>
+
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+
+    </ScrollView>
+
+</layout>
+
