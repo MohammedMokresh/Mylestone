@@ -8,4 +8,16 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+
+
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="android:windowContentTransitions">true</item>
+        <item name="android:fontFamily">@font/proxima_nova_regular</item>
+        <item name="android:windowAnimationStyle">@null</item>
+        <item name="colorControlNormal">#1f000000</item>
+
+    </style>
+
 </resources>

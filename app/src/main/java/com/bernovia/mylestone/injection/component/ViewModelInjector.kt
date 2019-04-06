@@ -2,6 +2,7 @@ package com.bernovia.mylestone.injection.component
 
 
 import com.bernovia.mylestone.injection.module.NetworkModule
+import com.bernovia.mylestone.ui.createMilestone.CreateMilestoneViewModel
 import com.bernovia.mylestone.ui.milestonesList.MilestoneListViewModel
 import com.bernovia.mylestone.ui.login.LoginViewModel
 import com.bernovia.mylestone.ui.signUp.SignUpViewModel
@@ -21,6 +22,7 @@ interface ViewModelInjector {
     fun inject(milestoneListViewModel: MilestoneListViewModel)
     fun injectLogin(loginViewModel: LoginViewModel)
     fun injectSignUp(signUpViewModel: SignUpViewModel)
+    fun injectCreateMilestone(createMilestoneViewModel: CreateMilestoneViewModel)
 
 
     @Component.Builder
