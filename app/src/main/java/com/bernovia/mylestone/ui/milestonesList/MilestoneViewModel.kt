@@ -15,7 +15,7 @@ class MilestoneViewModel : BaseViewModel() {
         milestoneDate.value=milestone.date
         milestoneStory.value=milestone.story
         milestoneTitle.value=milestone.title
-        milestoneUsername.value=milestone.user_name
+        milestoneUsername.value="By: "+ milestone.user_name
     }
 
     fun getMilestoneDate():MutableLiveData<String>{
@@ -31,7 +31,7 @@ class MilestoneViewModel : BaseViewModel() {
     }
 
     fun getMilestoneUserName(): MutableLiveData<String> {
-        return milestoneUsername
+        return  milestoneUsername
     }
 
 }
