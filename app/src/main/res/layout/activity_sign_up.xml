@@ -47,7 +47,7 @@
                             android:id="@+id/zoologo"
                             android:layout_width="50dp"
                             android:layout_height="50dp"
-                            app:srcCompat="@drawable/ic_launcher_background"
+                            app:srcCompat="@drawable/mylestone_logo"
                             tools:ignore="ContentDescription"/>
 
                     <LinearLayout
@@ -61,7 +61,7 @@
                     >
 
                         <TextView
-                                android:id="@+id/signin1"
+                                android:id="@+id/signin_TextView"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="end"
@@ -85,14 +85,14 @@
 
 
                 <com.google.android.material.textfield.TextInputLayout
-                        android:id="@+id/first_name_TextInputLayout"
+                        android:id="@+id/user_name_TextInputLayout"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginEnd="5dp"
                         android:layout_weight="1">
 
                     <EditText
-                            android:id="@+id/first_name_EditText"
+                            android:id="@+id/user_name_EditText"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             app:fontFamily="@font/proxima_nova_regular"
@@ -185,7 +185,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
                         android:gravity="center"
-                        android:text="by_signing_up_you_agree_with_our_terms_and_conditions"
+                        android:text="@string/by_signing_up_you_agree_with_our_terms_and_conditions"
                         android:textColor="#a9b0c3"
                         android:textSize="12sp"/>
 

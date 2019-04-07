@@ -1,5 +1,6 @@
 package com.bernovia.mylestone.ui.createMilestone
 
+import android.app.DatePickerDialog
 import android.os.Bundle
 import android.util.Log
 import androidx.annotation.StringRes
@@ -9,14 +10,20 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import com.bernovia.mylestone.R
 import com.bernovia.mylestone.databinding.ActivityCreateMilestoneBinding
+import com.bernovia.mylestone.utils.DateUtil
 import com.bernovia.mylestone.utils.PreferenceManager
 import com.google.android.material.snackbar.Snackbar
+import java.util.*
 
 class CreateMilestoneActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityCreateMilestoneBinding
     private lateinit var viewModel: CreateMilestoneViewModel
     private var errorSnackbar: Snackbar? = null
+
+    private val myCalendar = Calendar.getInstance()
+    private var date: DatePickerDialog.OnDateSetListener? = null
+
 
     var preferenceManager: PreferenceManager = PreferenceManager.instance
 
@@ -26,6 +33,17 @@ class CreateMilestoneActivity : AppCompatActivity() {
 
 
         viewModel = ViewModelProviders.of(this).get(CreateMilestoneViewModel::class.java)
+
+
+//        DateUtil.showDatePicker(this, myCalendar, date)
+
+
+//        date = DatePickerDialog.OnDateSetListener { view, year, month, dayOfMonth ->
+//            myCalendar.set(Calendar.YEAR, year)
+//            myCalendar.set(Calendar.MONTH, month)
+//            myCalendar.set(Calendar.DAY_OF_MONTH, dayOfMonth)
+//            DateUtil.updateDateLabel(myCalendar, binding.ageEditText).format(myCalendar.time)
+//        }
 
 
 
