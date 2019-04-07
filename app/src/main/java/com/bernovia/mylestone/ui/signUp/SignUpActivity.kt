@@ -37,6 +37,11 @@ class SignUpActivity : AppCompatActivity(), View.OnClickListener, TextWatcherAda
         binding.signinTextView.setOnClickListener(this)
         binding.termsTextView.setOnClickListener(this)
 
+        binding.emailEditText.addTextChangedListener(TextWatcherAdapter(binding.emailEditText, this))
+        binding.passwordEditText.addTextChangedListener(TextWatcherAdapter(binding.passwordEditText, this))
+        binding.userNameEditText.addTextChangedListener(TextWatcherAdapter(binding.userNameEditText, this))
+        binding.confirmPasswordEditText.addTextChangedListener(TextWatcherAdapter(binding.confirmPasswordEditText, this))
+
 
     }
 
@@ -81,7 +86,10 @@ class SignUpActivity : AppCompatActivity(), View.OnClickListener, TextWatcherAda
             binding.userNameEditText.text.toString()
         )
 
-        viewModel.signUpResponseBody.observe(this, Observer {
+        viewModel.signUpResponseBody.observe(this, Observer {signUpResponse->
+            preferenceManager.userId= signUpResponse.data.id as Int
+
+
             LoginActivity.instance.finish()
             val intent = Intent(this, CreateMilestoneActivity::class.java)
             startActivity(intent)

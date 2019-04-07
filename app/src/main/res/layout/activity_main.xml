@@ -30,6 +30,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"/>
 
+
         <RelativeLayout
                 android:id="@+id/header_relativeLayout"
                 android:layout_width="0dp"
@@ -39,6 +40,15 @@
                 android:layout_height="60dp">
 
 
+            <com.polyak.iconswitch.IconSwitch
+                    android:id="@+id/icon_switch"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:isw_icon_left="@drawable/worldwide"
+                    android:layout_centerVertical="true"
+                    app:isw_icon_size="16dp"
+                    android:layout_marginStart="5dp"
+                    app:isw_icon_right="@drawable/locked" />
             <ImageView
                     android:layout_centerInParent="true"
                     android:layout_width="120dp"

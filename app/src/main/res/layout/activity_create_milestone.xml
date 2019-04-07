@@ -7,14 +7,14 @@
     <data>
         <variable
                 name="viewModel"
-                type="com.bernovia.mylestone.ui.createMilestone.CreateMilestoneViewModel" />
+                type="com.bernovia.mylestone.ui.createMilestone.CreateMilestoneViewModel"/>
     </data>
 
 
     <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-           >
+    >
         <ProgressBar
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -61,93 +61,105 @@
 
 
         </RelativeLayout>
-
-
-        <LinearLayout
+        <ScrollView
+                android:layout_centerInParent="true"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_centerVertical="true"
-                android:layout_marginLeft="20dp"
-                android:layout_marginTop="60dp"
-                android:layout_marginRight="20dp"
-                android:gravity="center"
-                android:orientation="vertical">
+                android:layout_height="wrap_content">
 
-            <com.google.android.material.textfield.TextInputLayout
-                    android:id="@+id/title_TextInputLayout"
+            <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="60dp"
+                    android:layout_marginRight="20dp"
+                    android:gravity="center"
+                    android:orientation="vertical">
 
-                <androidx.appcompat.widget.AppCompatEditText
-                        android:id="@+id/title_EditText"
+                <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/title_TextInputLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                    <androidx.appcompat.widget.AppCompatEditText
+                            android:id="@+id/title_EditText"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            app:fontFamily="@font/proxima_nova_regular"
+                            android:hint="@string/title"
+                            android:inputType="textEmailAddress"
+                            android:textColor="@color/colorPrimary"
+                            android:textSize="14sp"
+
+
+                    />
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+                <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/date_TextInputLayout"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        app:fontFamily="@font/proxima_nova_regular"
-                        android:hint="@string/title"
-                        android:inputType="textEmailAddress"
-                        android:textColor="@color/colorPrimary"
+                        android:layout_marginTop="5dp">
+
+                    <androidx.appcompat.widget.AppCompatEditText
+                            android:id="@+id/date_EditText"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            app:fontFamily="@font/proxima_nova_regular"
+                            android:hint="@string/date"
+                            android:focusableInTouchMode="false"
+                            android:inputType="date"
+                            android:textColor="@color/colorPrimary"
+                            android:textSize="14sp"/>
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+                <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/story_TextInputLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp">
+
+                    <androidx.appcompat.widget.AppCompatEditText
+                            android:id="@+id/story_EditText"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            app:fontFamily="@font/proxima_nova_regular"
+                            android:hint="@string/story"
+                            android:inputType="textMultiLine"
+                            android:textColor="@color/colorPrimary"
+                            android:textSize="14sp"/>
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <CheckBox
+                        android:layout_marginTop="5dp"
+                        android:id="@+id/make_it_secret_Checkbox"
+                        android:text="@string/make_it_secret"
+                        android:fontFamily="@font/proxima_nova_semi_bold"
+                        android:layout_width="match_parent"
                         android:textSize="14sp"
+                        android:textColor="@color/colorPrimary"
+                        android:layout_height="wrap_content"/>
 
-
-                />
-            </com.google.android.material.textfield.TextInputLayout>
-
-
-            <com.google.android.material.textfield.TextInputLayout
-                    android:id="@+id/date_TextInputLayout"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp">
-
-                <androidx.appcompat.widget.AppCompatEditText
-                        android:id="@+id/date_EditText"
+                <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/create_Button"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        app:fontFamily="@font/proxima_nova_regular"
-                        android:hint="@string/date"
-                        android:focusableInTouchMode="false"
-                        android:inputType="date"
-                        android:textColor="@color/colorPrimary"
-                        android:textSize="14sp"/>
-            </com.google.android.material.textfield.TextInputLayout>
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="15dp"
+                        android:background="@drawable/bg_rounded_accent"
+                        app:fontFamily="@font/proxima_nova_semi_bold"
+                        android:text="@string/create"
+                        android:textAllCaps="false"
+                        android:layout_marginBottom="20dp"
+                        android:textColor="#cbd1dc"
+                        android:textSize="16sp"/>
 
 
-            <com.google.android.material.textfield.TextInputLayout
-                    android:id="@+id/story_TextInputLayout"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp">
+            </LinearLayout>
 
-                <androidx.appcompat.widget.AppCompatEditText
-                        android:id="@+id/story_EditText"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        app:fontFamily="@font/proxima_nova_regular"
-                        android:hint="@string/story"
-                        android:inputType="textMultiLine"
-                        android:textColor="@color/colorPrimary"
-                        android:textSize="14sp"/>
-            </com.google.android.material.textfield.TextInputLayout>
-
-
-            <androidx.appcompat.widget.AppCompatButton
-                    android:id="@+id/create_Button"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_horizontal"
-                    android:layout_marginTop="15dp"
-                    android:background="@drawable/bg_rounded_accent"
-                    app:fontFamily="@font/proxima_nova_semi_bold"
-                    android:text="@string/create"
-                    android:textAllCaps="false"
-                    android:textColor="#cbd1dc"
-                    android:textSize="16sp"/>
-
-
-        </LinearLayout>
-
+        </ScrollView>
 
     </RelativeLayout>
-
 </layout>
 

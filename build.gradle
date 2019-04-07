@@ -19,7 +19,8 @@ allprojects {
     repositories {
         google()
         jcenter()
-        
+        maven { url 'https://jitpack.io' }
+
     }
 }
 
@@ -56,10 +57,12 @@ ext {
     lifecycleVersion = '2.0.0'
     retrofit_version = '2.4.0'
     timeline_view_version = '1.1.0'
+    icon_switch = '1.0.0'
 
 
     // Test dependencies
     junitVersion = '4.12'
     espressoVersion = '3.1.0'
     mockitoVersion = '2.15.0'
+
 }

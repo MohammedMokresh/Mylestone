@@ -12,6 +12,8 @@ object DateUtil {
 
 
     fun showDatePicker(context: Activity, myCalendar: Calendar, date: DatePickerDialog.OnDateSetListener) {
+
+
         val dpd = DatePickerDialog(context, date, myCalendar.get(Calendar.YEAR), myCalendar.get(Calendar.MONTH),
             myCalendar.get(Calendar.DAY_OF_MONTH)
         )
@@ -29,7 +31,7 @@ object DateUtil {
 
     }
 
-    private fun openYearView(datePicker: DatePicker) {
+     fun openYearView(datePicker: DatePicker) {
         try {
             val mDelegateField = datePicker.javaClass.getDeclaredField("mDelegate")
             mDelegateField.isAccessible = true
@@ -49,7 +51,7 @@ object DateUtil {
 
 
     fun updateDateLabel(myCalendar: Calendar, editText: EditText): SimpleDateFormat {
-        val myFormat = "yyyy-MM-dd" //In which you need put here
+        val myFormat = "dd/MM/yyyy" //In which you need put here
         val sdf = SimpleDateFormat(myFormat, Locale.US)
         editText.setText(sdf.format(myCalendar.time))
 

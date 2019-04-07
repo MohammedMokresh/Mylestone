@@ -13,6 +13,7 @@ import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.Disposable
 import io.reactivex.schedulers.Schedulers
 import java.io.IOException
+import java.lang.Exception
 import java.net.HttpURLConnection
 import javax.inject.Inject
 
@@ -59,7 +60,7 @@ class CreateMilestoneViewModel : BaseViewModel() {
                                 gson.fromJson(response.errorBody()!!.string(), CreateMilestoneResoponseBody::class.java)
                             onCreateMilestoneError(mError)
 
-                        } catch (e: IOException) {
+                        } catch (e: Throwable) {
                             // handle failure to read error
                         }
 
@@ -95,8 +96,9 @@ class CreateMilestoneViewModel : BaseViewModel() {
 
     override fun onCleared() {
         super.onCleared()
-        subscription.dispose()
-    }
+        try {
+            subscription.dispose()
+        }catch (e: Exception){}}
 
 
 }

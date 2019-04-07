@@ -75,7 +75,8 @@ import com.google.android.material.snackbar.Snackbar
 
         viewModel.signIn(binding.emailEditText.text.toString(), binding.passwordEditText.text.toString())
 
-        viewModel.loginResponseBody.observe(this, Observer {
+        viewModel.loginResponseBody.observe(this, Observer {loginResponse->
+            preferenceManager.userId=loginResponse.data.id
             val intent = Intent(this, CreateMilestoneActivity::class.java)
             startActivity(intent)
             finish()

@@ -2,6 +2,7 @@ package com.bernovia.mylestone.utils
 
 import android.content.Context
 import android.content.SharedPreferences
+import com.google.gson.Gson
 
 class PreferenceManager private constructor(context: Context) {
     private val mPref: SharedPreferences
@@ -26,6 +27,11 @@ class PreferenceManager private constructor(context: Context) {
         get() = mPref.getString(TOKEN_TYPE, "")
         set(value) = mPref.edit().putString(TOKEN_TYPE, value).apply()
 
+    var userId: Int
+        get() = mPref.getInt(USER_ID, 0)
+        set(value) = mPref.edit().putInt(USER_ID, value).apply()
+
+
 
     init {
         mPref = context.getSharedPreferences(PREF_NAME, Context.MODE_PRIVATE)
@@ -46,6 +52,8 @@ class PreferenceManager private constructor(context: Context) {
         private val EXPIRY = "expiry"
         private val UID = "uid"
         private val TOKEN_TYPE = "token_type"
+        private val USER_ID = "user_id"
+
 
 
         private var sInstance: PreferenceManager? = null

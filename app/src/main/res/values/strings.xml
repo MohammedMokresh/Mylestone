@@ -16,15 +16,20 @@
     <string name="create">Create</string>
     <string name="create_milestone">Create Milestone</string>
 
-    <string name="user_name_error">Username should not be empty </string>
+    <string name="user_name_error">Username should not be empty</string>
     <string name="password_does_not_match">Password doesn\'t match</string>
 
-    <string name="email_not_valid">Email not valid </string>
+    <string name="email_not_valid">Email not valid</string>
 
     <string name="password_error">Password should be at least 8 characters</string>
     <string name="by_signing_up_you_agree_with_our_terms_and_conditions">by signing up you agree with our terms and
         conditions
     </string>
+    <string name="make_it_secret">Make it secret</string>
 
+
+    <string name="title_error">Title should not be empty</string>
+    <string name="date_error">Date should not be empty</string>
+    <string name="story_error">Story should not be empty</string>
 </resources>
 

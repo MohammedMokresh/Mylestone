@@ -14,6 +14,7 @@ import io.reactivex.disposables.Disposable
 import io.reactivex.schedulers.Schedulers
 import retrofit2.Response
 import java.io.IOException
+import java.lang.Exception
 import java.net.HttpURLConnection
 import javax.inject.Inject
 
@@ -95,7 +96,10 @@ class SignUpViewModel : BaseViewModel() {
 
     override fun onCleared() {
         super.onCleared()
-        subscription.dispose()
+        try {
+            subscription.dispose()
+
+        }catch (e:Exception ){}
     }
 
 }

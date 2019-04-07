@@ -50,21 +50,20 @@
                         android:paddingTop="5dp"
                         android:paddingBottom="5dp"
                         android:background="@color/green_300"
->
+                >
 
                     <androidx.constraintlayout.widget.Guideline
                             android:id="@+id/bottom_titleGuideline"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:orientation="horizontal"
-                            app:layout_constraintGuide_percent="0.60" />
+                            app:layout_constraintGuide_percent="0.60"/>
                     <androidx.constraintlayout.widget.Guideline
                             android:id="@+id/date_guideline"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:orientation="vertical"
-                            app:layout_constraintGuide_percent="0.75" />
-
+                            app:layout_constraintGuide_percent="0.75"/>
 
 
                     <TextView
@@ -81,7 +80,7 @@
                             app:layout_constraintBottom_toTopOf="@+id/bottom_titleGuideline"
                             app:layout_constraintEnd_toStartOf="@id/date_guideline"
                             app:layout_constraintStart_toStartOf="parent"
-                          />
+                    />
 
 
                     <TextView
@@ -115,6 +114,15 @@
                             app:layout_constraintBottom_toBottomOf="@id/bottom_titleGuideline"
                     />
 
+                    <ImageView
+                            android:id="@+id/delete_ImageView"
+                            android:layout_width="30dp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            android:src="@drawable/recycle_bin"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            android:padding="5dp"
+
+                            android:layout_height="30dp"/>
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
                 <TextView
