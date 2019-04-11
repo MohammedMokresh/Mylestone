@@ -4,6 +4,7 @@ import com.bernovia.mylestone.network.ApiEndPoint.ENDPOINT_CREATE_MILESTONE
 import com.bernovia.mylestone.network.ApiEndPoint.ENDPOINT_DELETE_MILESTONE
 import com.bernovia.mylestone.network.ApiEndPoint.ENDPOINT_GET_PERSONAL
 import com.bernovia.mylestone.network.ApiEndPoint.ENDPOINT_SIGN_IN
+import com.bernovia.mylestone.network.ApiEndPoint.ENDPOINT_SIGN_OUT
 import com.bernovia.mylestone.network.ApiEndPoint.SIGN_UP
 import com.bernovia.mylestone.ui.createMilestone.createMilestoneModel.CreateMilestoneRequestBody
 import com.bernovia.mylestone.ui.createMilestone.createMilestoneModel.CreateMilestoneResoponseBody
@@ -55,6 +56,16 @@ interface MilestoneApi {
         @Header("Uid") uid: String, @Path("Id") customerId: Int
     ): Single<Response<CreateMilestoneResoponseBody>>
 
+
+
+
+    @DELETE(ENDPOINT_SIGN_OUT)
+    fun signout(
+        @Header("Content-Type") contentType: String, @Header("Accept") accept: String,
+        @Header("Access-Token") accessToken: String, @Header("Client") client: String,
+        @Header("Token-Type") tokenType: String, @Header("Expiry") expiry: String,
+        @Header("Uid") uid: String
+    ): Single<Response<CreateMilestoneResoponseBody>>
 
 
     @POST(ENDPOINT_CREATE_MILESTONE)

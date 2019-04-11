@@ -11,11 +11,8 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import com.bernovia.mylestone.R
 import com.bernovia.mylestone.databinding.ActivityCreateMilestoneBinding
-import com.bernovia.mylestone.utils.DateUtil
+import com.bernovia.mylestone.utils.*
 import com.bernovia.mylestone.utils.DateUtil.updateDateLabel
-import com.bernovia.mylestone.utils.PreferenceManager
-import com.bernovia.mylestone.utils.TextWatcherAdapter
-import com.bernovia.mylestone.utils.ValidateUtil
 import com.google.android.material.snackbar.Snackbar
 import java.util.*
 
@@ -96,8 +93,8 @@ class CreateMilestoneActivity : AppCompatActivity(), View.OnClickListener, TextW
         )
 
 
-        viewModel.createMilestoneResoponseBody.observe(this, Observer { t ->
-            //                Log.e("test", preferenceManager.accessToken)
+        viewModel.createMilestoneResoponseBody.observe(this, Observer {
+            finish()
 
 
         })
@@ -142,18 +139,26 @@ class CreateMilestoneActivity : AppCompatActivity(), View.OnClickListener, TextW
         val id = v!!.id
 
         when (id) {
-            R.id.create_Button -> submit()
+            R.id.create_Button -> {
+                MylestoneUtil.hideKeyboard(this)
+                submit()}
 
             R.id.back_ImageButton -> finish()
 
 
             R.id.date_EditText -> {
-                val c = Calendar.getInstance()
-                val year = c.get(Calendar.YEAR)
-                val month = c.get(Calendar.MONTH)
-                val day = c.get(Calendar.DAY_OF_MONTH)
+                val myCalendar = Calendar.getInstance()
+                val year = myCalendar.get(Calendar.YEAR)
+                val month = myCalendar.get(Calendar.MONTH)
+                val day = myCalendar.get(Calendar.DAY_OF_MONTH)
+
                 val dpd = DatePickerDialog(this, DatePickerDialog.OnDateSetListener { view, year, monthOfYear, dayOfMonth ->
-                    updateDateLabel(c,binding.dateEditText)
+
+                    myCalendar.set(Calendar.YEAR, year)
+                    myCalendar.set(Calendar.MONTH, month)
+                    myCalendar.set(Calendar.DAY_OF_MONTH, dayOfMonth)
+
+                    updateDateLabel(myCalendar,binding.dateEditText)
                 }, year, month, day)
 
                 dpd.datePicker.maxDate = System.currentTimeMillis() //Set max date

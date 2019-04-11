@@ -29,9 +29,29 @@ class MilestoneListViewModel : BaseViewModel(), MilestoneListAdapter.DeleteClick
     private lateinit var subscription: Disposable
 
     init {
-        loadMilestones()
+//        loadMilestones()
     }
 
+
+    fun signOut() {
+
+        subscription = milestoneApi.signout(
+            CONTENT_TYPE, ACCEPT, preferenceManager.accessToken!!
+            , preferenceManager.client!!, preferenceManager.tokenType!!
+            , preferenceManager.expiry!!
+            , preferenceManager.uid!!
+        )
+
+            .subscribeOn(Schedulers.io())
+            .observeOn(AndroidSchedulers.mainThread())
+            .subscribe(
+                {preferenceManager.clear()
+                loadMilestones()
+                },{}
+//                { result -> onRetrieveMilestonesListSuccess(result) },
+//                { onRetrieveMilestonesListError() }
+            )
+    }
 
     fun deletelMilestones(id: Int) {
 

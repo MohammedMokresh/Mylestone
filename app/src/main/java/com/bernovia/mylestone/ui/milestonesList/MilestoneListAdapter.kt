@@ -33,9 +33,9 @@ class MilestoneListAdapter : RecyclerView.Adapter<MilestoneListAdapter.ViewHolde
         val mColors = arrayOf("#9f84c4", "#02a2dd", "#58b25e", "#eab715")
 
         holder.itemBinding.headerConstraintLayout.setBackgroundColor(Color.parseColor(mColors[position % 4]))
-        if (preferenceManager.userId==milestonesList.get(position).user_id){
+        if (preferenceManager.userId== milestonesList[position].user_id){
             holder.itemBinding.deleteImageView.visibility= View.VISIBLE
-            holder.itemBinding.deleteImageView.setOnClickListener{v->deleteClickListner.deleteOnClick(v, milestonesList.get(position).id,position)}
+            holder.itemBinding.deleteImageView.setOnClickListener{v->deleteClickListner.deleteOnClick(v, milestonesList[position].id,position)}
         }else {
             holder.itemBinding.deleteImageView.visibility= View.GONE
 

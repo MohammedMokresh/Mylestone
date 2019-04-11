@@ -1,11 +1,11 @@
 package com.bernovia.mylestone.ui.signUp.signUpModels
 
 data class Data(
-    val created_at: Any,
+    val created_at: String,
     val email: String,
-    val id: Any,
+    val id: Int,
     val provider: String,
     val uid: String,
-    val updated_at: Any,
+    val updated_at: String,
     val username: String
 )

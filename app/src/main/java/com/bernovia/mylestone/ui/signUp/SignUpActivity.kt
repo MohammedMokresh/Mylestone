@@ -11,8 +11,10 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import com.bernovia.mylestone.R
 import com.bernovia.mylestone.databinding.ActivitySignUpBinding
+import com.bernovia.mylestone.ui.WebViewActivity
 import com.bernovia.mylestone.ui.createMilestone.CreateMilestoneActivity
 import com.bernovia.mylestone.ui.login.LoginActivity
+import com.bernovia.mylestone.utils.MylestoneUtil
 import com.bernovia.mylestone.utils.PreferenceManager
 import com.bernovia.mylestone.utils.TextWatcherAdapter
 import com.bernovia.mylestone.utils.ValidateUtil
@@ -74,7 +76,7 @@ class SignUpActivity : AppCompatActivity(), View.OnClickListener, TextWatcherAda
 
         if (!ValidateUtil.validateFieldsDidnotMatch(
                 binding.confirmPasswordEditText, binding.confirmPasswordTextInputLayout, this
-                , binding.confirmPasswordEditText, resources.getString(R.string.password_does_not_match)
+                , binding.passwordEditText, resources.getString(R.string.password_does_not_match)
             )
         )
             return
@@ -87,7 +89,7 @@ class SignUpActivity : AppCompatActivity(), View.OnClickListener, TextWatcherAda
         )
 
         viewModel.signUpResponseBody.observe(this, Observer {signUpResponse->
-            preferenceManager.userId= signUpResponse.data.id as Int
+            preferenceManager.userId= signUpResponse.data.id
 
 
             LoginActivity.instance.finish()
@@ -133,16 +135,18 @@ class SignUpActivity : AppCompatActivity(), View.OnClickListener, TextWatcherAda
         val id = v!!.id
         when (id) {
             R.id.signup_Button -> {
+                MylestoneUtil.hideKeyboard(this)
+
                 submit()
+
             }
 
             R.id.signin_TextView -> {
-                val intent = Intent(this, LoginActivity::class.java)
-                startActivity(intent)
                 finish()
             }
             R.id.terms_TextView -> {
-
+                val intent= Intent(applicationContext,WebViewActivity::class.java)
+                startActivity(intent)
 
             }
         }

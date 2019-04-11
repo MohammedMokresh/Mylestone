@@ -15,6 +15,7 @@ import com.bernovia.mylestone.R
 import com.bernovia.mylestone.databinding.ActivityLoginBinding
 import com.bernovia.mylestone.ui.createMilestone.CreateMilestoneActivity
 import com.bernovia.mylestone.ui.signUp.SignUpActivity
+import com.bernovia.mylestone.utils.MylestoneUtil
 import com.bernovia.mylestone.utils.PreferenceManager
 import com.bernovia.mylestone.utils.TextWatcherAdapter
 import com.bernovia.mylestone.utils.ValidateUtil
@@ -99,7 +100,9 @@ import com.google.android.material.snackbar.Snackbar
         val id = v!!.id
 
         when (id) {
-            R.id.login_Button -> { submit() }
+            R.id.login_Button -> {
+                MylestoneUtil.hideKeyboard(this)
+                submit() }
 
 
            R.id.signup_TextView ->{

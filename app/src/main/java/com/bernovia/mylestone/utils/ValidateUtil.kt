@@ -27,7 +27,7 @@ object ValidateUtil {
 
 
     fun validatePassword(editText: EditText, textInputLayout: TextInputLayout, activity: Activity): Boolean {
-        if (editText.text.toString().trim { it <= ' ' }.isEmpty() || editText.text.toString().length < 8) {
+        if (editText.text.toString().trim { it <= ' ' }.isEmpty() || editText.text.toString().length < 6) {
 
 
             textInputLayout.error = activity.getString(R.string.password_error)
