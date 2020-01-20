@@ -32,5 +32,12 @@
     <string name="date_error">Date should not be empty</string>
     <string name="story_error">Story should not be empty</string>
     <string name="terms_and_conditions">Terms and Conditions</string>
+    <string name="ad_app_id">ca-app-pub-7993350574053118~2242705835</string>
+    <string name="ad_app_unit_id">ca-app-pub-7993350574053118/2789500746</string>
+
+
+
+
+    <!--ca-app-pub-7993350574053118/2789500746-->
 </resources>
 

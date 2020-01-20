@@ -14,6 +14,7 @@ import com.bernovia.mylestone.databinding.ActivityMainBinding
 import com.bernovia.mylestone.ui.createMilestone.CreateMilestoneActivity
 import com.bernovia.mylestone.ui.login.LoginActivity
 import com.bernovia.mylestone.utils.PreferenceManager
+import com.google.android.gms.ads.AdRequest
 import com.google.android.material.snackbar.Snackbar
 import com.polyak.iconswitch.IconSwitch
 
@@ -36,7 +37,8 @@ class MainActivity : AppCompatActivity(), IconSwitch.CheckedChangeListener, View
 
         binding.milestonesRecyclerView.layoutManager = LinearLayoutManager(this)
         viewModel = ViewModelProviders.of(this).get(MilestoneListViewModel::class.java)
-
+        val adRequest = AdRequest.Builder().build()
+        binding.adView.loadAd(adRequest)
 
     }
 

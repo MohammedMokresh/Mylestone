@@ -19,7 +19,9 @@
         <meta-data
                 android:name="io.fabric.ApiKey"
                 android:value="166befe5fa46eef80506a8e43395a2b912f62cbc" />
-
+        <meta-data
+                android:name="com.google.android.gms.ads.APPLICATION_ID"
+                android:value="@string/ad_app_id"/>
 
         <activity android:name=".ui.WebViewActivity"
                   android:screenOrientation="portrait"
